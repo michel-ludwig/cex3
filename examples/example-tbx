@@ -1,0 +1,16 @@
+; comments are written like this
+
+; concept inclusions and disjunctions
+(implies A (and B C))
+
+; concept equality and existential restriction
+(equivalent E (some r F))
+
+; domain restriction
+(domain r (and B C))
+
+; range restriction
+(range r (some t G))
+
+; role inclusion
+(implies-role r s)

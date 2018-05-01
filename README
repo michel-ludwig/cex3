@@ -1,0 +1,87 @@
+
+Introduction
+------------
+
+CEX3 is a prototype tool for computing three types of logical differences between
+two ELHr terminologies, i.e. EL terminologies with additional domain
+restrictions, range restrictions, and (simple) role inclusions. CEX3 is an
+improvement over CEX2.5 as it is generally faster than CEX2.5 and it can
+also handle cyclic terminologies. CEX3 uses novel algorithms for detecting
+logical differences.
+
+The types of differences that can be analysed are differences w.r.t. concept inclusions,
+answers to instance queries, and answers to conjunctive queries formulated over
+a specified signature, which are logically entailed by a given terminology T1
+but not by a second terminology T2.
+
+CEX3 can compute a finite representation for each of the three difference
+types described above by searching for so-called difference witnesses.
+Additionally, CEX3 is also capable of finding example members of the
+difference sets, i.e. concept inclusions (in an extended language), which
+correspond to the difference witnesses. More details regarding the theoretical
+background of CEX3 can be found in [1].
+
+CEX3 makes use of the CB reasoner:
+
+https://github.com/ykazakov/cb-reasoner/
+
+
+Compilation Instructions
+-------------------------
+
+CEX3 is written in OCaml, i.e. it should be possible to compile it under any
+architecture or operating system for which OCaml is available.
+
+- Under Linux/Unix (where the 'make' tool is available) it should be sufficient
+  to type 'make' in the 'src' directory in order to compile CEX3. The binary
+  'cex3' will then also be created in the 'src' directory.
+
+- On other operating systems the compilation can be initiated by typing
+
+     ocamlbuild -lib unix -lib str -I cb/main -I cb/libs cex3.native
+
+  in the 'src' directory. The resulting binary will then typically be called
+  'cex3.native'.
+
+
+Running CEX3
+--------------
+
+'cex3' can be run as follows
+
+  cex3 --tbx1 <TBox1 file> --tbx2 <TBox2 file> --sig <signature file>
+          --examples --mode concept --simplify
+
+The input terminologies must be in KRSS format, and they are specified via the
+'--tbx1' and '--tbx2' flags. The signature file is passed to CEX3 via the
+'--sig' flag. It is also possible to use the full signature of either TBox1 or
+TBox2, or their intersection as comparison signature by using the flag
+'--use-sig' with either 'tbx1', 'tbx2', or 'shared' as arguments. If neither the
+flags '--sig', nor '--use-sig' is given, then the full signature of TBox2 is
+used.
+
+Examples of input files for CEX3 can be found in the 'examples/' subdirectory.
+
+The flag '--mode' with arguments 'concept', 'instance', or 'conjunctive-query'
+('cq') can be used to switch either between the concept, instance or
+conjunctive-query comparison mode, respectively.  By default concept
+mode is selected.
+
+The flag '--examples' activates the computation of members of either the
+concept, instance, or conjunctive query difference sets that correspond to the
+difference witnesses. By default only concept/role names are output together
+with the information whether they are left-hand or right-hand difference
+witnesses. Note that for examples illustrating instance queries or conjunctive
+queries, CEX3 does not compute ABoxes or conjunctive queries directly, but
+instead it outputs concept inclusions in ELHr extended with additional concept
+constructors that capture the required expressivity of ABoxes or conjunctive
+queries. More details regarding the translation between such concept inclusions
+and ABoxes/conjunctive queries can be found in [1].
+
+Finally, the flag '--simplify' switches on the simplification of the
+constructed examples.
+
+[1] Michel Ludwig, Dirk Walther: The Logical Difference for ELHr-Terminologies
+    using Hypergraphs. In Proceedings of the 21st European Conference on Artifical
+    Intelligence (ECAI 2014). Volume 263 of Frontiers in Artificial Intelligence
+    and Applications, pages 555-560, IOS Press.
