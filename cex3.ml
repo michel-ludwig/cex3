@@ -4,7 +4,7 @@
 (*  University of Liverpool                                *)
 (*                                                         *)
 (*  Copyright (C) 2010-2014                                *)
-(*  Michel Ludwig (michel@tcs.inf.tu-dresden.de)           *)
+(*  Michel Ludwig (michel.ludwig@gmail.com)                *)
 (*  University of Liverpool, and                           *)
 (*  TU Dresden                                             *)
 (*                                                         *)
@@ -94,7 +94,7 @@ let program_info = "============================================================
                    "\nCEX Version " ^ versionString ^ " (Prototype)" ^ 
                    "\n==================================================================================" ^
                    "\nCopyright (C) 2008-2014 by Boris Konev (konev@liverpool.ac.uk)," ^
-                   "\n                           Michel Ludwig (michel@tcs.inf.tu-dresden.de)," ^
+                   "\n                           Michel Ludwig (michel.ludwig@gmail.com)," ^
                    "\n                           University of Liverpool, and" ^
                    "\n                           TU Dresden" ^
                    "\n==================================================================================" ^

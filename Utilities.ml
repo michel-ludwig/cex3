@@ -1,6 +1,6 @@
 (***********************************************************)
 (*  Copyright (C) 2010-2014                                *)
-(*  Michel Ludwig (michel@tcs.inf.tu-dresden.de)           *)
+(*  Michel Ludwig (michel.ludwig@gmail.com)                *)
 (*  University of Liverpool, and                           *)
 (*  TU Dresden                                             *)
 (*                                                         *)

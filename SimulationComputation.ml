@@ -1,6 +1,6 @@
 (***********************************************************)
 (*  Copyright (C) 2013-2014                                *)
-(*  Michel Ludwig (michel@tcs.inf.tu-dresden.de)           *)
+(*  Michel Ludwig (michel.ludwig@gmail.com)                *)
 (*  TU Dresden                                             *)
 (*                                                         *)
 (*  This program is free software; you can redistribute    *)

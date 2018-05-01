@@ -5,7 +5,7 @@
 (*  University of Oxford                                   *)
 (*                                                         *)
 (*  Copyright (C) 2010 - 2014                              *)
-(*  Michel Ludwig (michel@tcs.inf.tu-dresden.de)           *)
+(*  Michel Ludwig (michel.ludwig@gmail.com)                *)
 (*  University of Liverpool                                *)
 (*                                                         *)
 (*  This program is free software; you can redistribute    *)
